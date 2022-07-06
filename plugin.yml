@@ -1,0 +1,8 @@
+main: com.x.noreport.Main
+version: 1.0.0
+name: NoReport
+apit-version: 1.19
+author: Player_X_YT
+softdepend:
+   - Essentials
+   - Luckperms
