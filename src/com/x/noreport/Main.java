@@ -12,6 +12,9 @@ public class Main extends JavaPlugin implements Listener {
 	@Override
 	public void onEnable() {
 		getServer().getPluginManager().registerEvents(this, this);
+		
+		if(ColorManager.getPlugin("Essentials")) ColorManager.setActive(ColorManager.ESSX, true);
+		if(ColorManager.getPlugin("Luckperms")) ColorManager.setActive(ColorManager.LP, true);
 	}
 	
 	@EventHandler
@@ -19,7 +22,7 @@ public class Main extends JavaPlugin implements Listener {
 		e.setCancelled(true);
 		String message = ColorManager.getColoredText(e.getPlayer(), e.getMessage());
 		for(Player p : getServer().getOnlinePlayers()) {
-			p.sendMessage(message);
+			p.sendMessage(ColorManager.getColoredText(e.getPlayer(), message));
 		}
 	}
 	

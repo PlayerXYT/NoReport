@@ -62,4 +62,6 @@ public final class ColorManager {
 	public static String format(String color, Player player, String message) {
 		return String.format("<%s%s%s> %s", color, player.getDisplayName(), ChatColor.RESET, message);
 	}
+	
+	public static boolean getPlugin(String name) {return Bukkit.getPluginManager().getPlugin(name)!=null;}
 }
